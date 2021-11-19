@@ -1,5 +1,4 @@
 
-#from Calls import Calls
 class Elevator:
 
     #elevator constructor
@@ -24,11 +23,12 @@ class Elevator:
         self.openTime = openTime
         self.startTime = startTime
         self.stopTime = stopTime
-        self.listCalls: Calls= []
-        self.temp_listCalls: Calls= []
+        self.listCalls = []
+        self.temp_listCalls = []
+        self.location = []  # elevator[t]
 
-    def tempCall_list_before(self, elevator): #create temp list call
-        self.temp_listCalls= self.listCalls.copy()
+    def tempCall_list_before(self): #create temp list call
+        self.temp_listCalls = self.listCalls.copy()
 
-    def tempCall_list_after(self, elevator): #return to the original list call
-        self.listCalls= self.temp_listCalls.copy()
+    def tempCall_list_after(self): #return to the original list call
+        self.listCalls = self.temp_listCalls.copy()
